@@ -170,6 +170,10 @@
       <Project>{0778d978-ded4-4378-8044-8f6ef59dff5f}</Project>
       <Name>gerbil.core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\gerbil.loader\gerbil.loader.csproj">
+      <Project>{31b6f8ee-9e2a-4904-b93e-e1a595bf2e8e}</Project>
+      <Name>gerbil.loader</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
