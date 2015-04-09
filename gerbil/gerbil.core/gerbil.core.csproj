@@ -7,7 +7,7 @@
     <ProjectGuid>{0778D978-DED4-4378-8044-8F6EF59DFF5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gerbil</RootNamespace>
+    <RootNamespace>Gerbil</RootNamespace>
     <AssemblyName>gerbil.core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnimal.cs" />
+    <Compile Include="IGerbilPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
