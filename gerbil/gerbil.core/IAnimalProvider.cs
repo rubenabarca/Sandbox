@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public interface IGerbilPlugin
+    public interface IAnimalProvider
     {
         IEnumerable<IAnimal> GetAnimals();
     }

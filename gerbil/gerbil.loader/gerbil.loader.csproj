@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0778D978-DED4-4378-8044-8F6EF59DFF5F}</ProjectGuid>
+    <ProjectGuid>{31B6F8EE-9E2A-4904-B93E-E1A595BF2E8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Gerbil</RootNamespace>
-    <AssemblyName>gerbil.core</AssemblyName>
+    <AssemblyName>gerbil.loader</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,9 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAnimal.cs" />
-    <Compile Include="IAnimalProvider.cs" />
+    <Compile Include="AnimalLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gerbil.core\gerbil.core.csproj">
+      <Project>{0778d978-ded4-4378-8044-8f6ef59dff5f}</Project>
+      <Name>gerbil.core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
