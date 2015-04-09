@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerbil", "gerbil\gerbil.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerbil.core", "gerbil.core\gerbil.core.csproj", "{0778D978-DED4-4378-8044-8F6EF59DFF5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dormice", "dormice\dormice.csproj", "{3C4AE59E-1410-4265-B344-ADF7EB5600E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4AE59E-1410-4265-B344-ADF7EB5600E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4AE59E-1410-4265-B344-ADF7EB5600E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4AE59E-1410-4265-B344-ADF7EB5600E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4AE59E-1410-4265-B344-ADF7EB5600E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
