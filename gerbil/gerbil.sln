@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerbil", "gerbil\gerbil.csproj", "{2F2057B6-211A-4E33-B343-724D397BB18F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gerbil.core", "gerbil.core\gerbil.core.csproj", "{0778D978-DED4-4378-8044-8F6EF59DFF5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2F2057B6-211A-4E33-B343-724D397BB18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F2057B6-211A-4E33-B343-724D397BB18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F2057B6-211A-4E33-B343-724D397BB18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0778D978-DED4-4378-8044-8F6EF59DFF5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
