@@ -50,6 +50,15 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release (
+  del "$(TargetDir)*.config" /Q
+  del "$(TargetDir)*.xml" /Q
+  del "$(TargetDir)*.pdb" /Q
+  del "$(TargetDir)gerbil*.*" /Q
+  xcopy /E /Y "$(TargetDir)*.*" "$(TargetDir)..\..\..\plugins"
+)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
