@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gliridae.cs" />
-    <Compile Include="MammalProvider.cs" />
+    <Compile Include="GliridaeProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

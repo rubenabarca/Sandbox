@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class MammalProvider: IGerbilPlugin
+    public class GliridaeProvider: IGerbilPlugin
     {
         public IEnumerable<IAnimal> GetAnimals()
         {
