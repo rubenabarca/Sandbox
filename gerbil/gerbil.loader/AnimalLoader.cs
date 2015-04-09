@@ -18,7 +18,7 @@
                 var assembly = Assembly.LoadFrom(assemblyPath);
                 var assemblyTypes = assembly.GetTypes();
                 var animalProviderTypes = (from assemblyType in assemblyTypes
-                                           where assemblyType.IsAssignableFrom(typeof(IAnimalProvider))
+                                           where assemblyType.GetInterface(typeof(IAnimalProvider).FullName) != null
                                            select assemblyType).ToArray();
                 foreach (var animalProviderType in animalProviderTypes)
                 {

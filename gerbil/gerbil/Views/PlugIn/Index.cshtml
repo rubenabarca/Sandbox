@@ -1,0 +1,35 @@
+﻿@model gerbil.Models.PluginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.AvailableAnimalProviders)
+{
+    <tr>
+        <td>
+            @Html.Label("Name", item.Key.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.Key.FullName })
+            <ul>
+                @foreach (var animal in item.Value)
+                {
+                    <li>@animal.Species</li>
+                }
+            </ul>
+        </td>
+    </tr>
+}
+
+</table>
