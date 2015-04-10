@@ -178,6 +178,33 @@
                 }
             }
 
+            var schemas = (from Schema schema in database.Schemas
+                                        where !schema.IsSystemObject
+                                        select schema);
+
+
+            foreach (Schema schema in schemas)
+            {
+                var scriptCollection = scripter.EnumScript(new Urn[] { schema.Urn });
+                if (!useSingleFile)
+                {
+                    var outputFile = Path.Combine(outputPath, string.Format("{0}.{1}.sql", schema.Name, "Schema"));
+                    if (overwriteFile && File.Exists(outputFile))
+                    {
+                        File.Delete(outputFile);
+                    }
+                    scriptTextWriter = new StreamWriter(outputFile);
+                }
+                foreach (var scriptString in scriptCollection)
+                {
+                    scriptTextWriter.WriteLine(scriptString);
+                }
+                if (!useSingleFile)
+                {
+                    scriptTextWriter.Close();
+                }
+            }
+
             if (useSingleFile)
             {
                 scriptTextWriter.Close();
