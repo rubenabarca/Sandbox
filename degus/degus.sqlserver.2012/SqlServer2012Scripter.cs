@@ -40,7 +40,11 @@
                 scriptTextWriter = new StreamWriter(outputPath);
             }
 
-            foreach (Table table in database.Tables)
+            var userTables = (from Table table in database.Tables
+                              where !table.IsSystemObject
+                              select table);
+
+            foreach (Table table in userTables)
             {
                 if (tableConfigurations != null)
                 {
@@ -70,7 +74,13 @@
             }
 
             scripter.Options.ScriptData = false;
-            foreach (View view in database.Views)
+
+            var userViews = (from View view in database.Views
+                             where !view.IsSystemObject
+                             select view);
+
+
+            foreach (View view in userViews)
             {
                 var scriptCollection = scripter.EnumScript(new Urn[] { view.Urn });
                 if (!useSingleFile)
