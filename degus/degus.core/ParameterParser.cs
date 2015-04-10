@@ -2,15 +2,17 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Xml.Serialization;
 
     public class ParameterParser
     {
-        public static ParameterSet GetParameterSet(string[] parameterStringArray)
+        public static ScriptingConfiguration GetScriptingConfiguration(string[] parameterStringArray)
         {
-            var parameterSet = new ParameterSet();
+            var parameterSet = new ScriptingConfiguration();
             if (parameterStringArray.Length > 0)
             {
                 var actionParameter = parameterStringArray[0];
@@ -45,11 +47,29 @@
                             parameterSet.ScriptData = GetBooleanParameterValue(parameterStringArray, "ScriptData");
                         }
                         break;
+                    case ScriptingAction.ScriptFromConfig:
+                        parameterSet.ConfigFile = GetParameterValue(parameterStringArray, "ConfigFile");
+                        parameterSet.IsValid = !string.IsNullOrEmpty(parameterSet.ConfigFile);
+                        break;
                     default:
                         break;
                 }
             }
             return parameterSet;
+        }
+
+        public static ScriptingConfiguration GetScriptingConfigurationFromFile(string configFilePath)
+        {
+            XmlSerializer serializer =
+            new XmlSerializer(typeof(ScriptingConfiguration));
+
+            FileStream fileStream = new FileStream(configFilePath, FileMode.Open);
+            TextReader reader = new StreamReader(fileStream);
+
+            ScriptingConfiguration scriptingConfiguration;
+
+            scriptingConfiguration = (ScriptingConfiguration)serializer.Deserialize(reader);
+            return scriptingConfiguration;
         }
 
         private static bool GetBooleanParameterValue(string[] parameterStringArray, string parameterName, bool defaultValue = false)

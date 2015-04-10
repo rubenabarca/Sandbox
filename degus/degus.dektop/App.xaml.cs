@@ -18,7 +18,7 @@
 
         void App_Startup(object sender, StartupEventArgs e)
         {
-            var parameterSet = ParameterParser.GetParameterSet(e.Args);
+            var parameterSet = ParameterParser.GetScriptingConfiguration(e.Args);
             if (!parameterSet.IsValid)
             {
                 // TODO: implement more informative error reporting.
@@ -27,6 +27,7 @@
             }
             else
             {
+                var scripter = new SqlServer2012Scripter();
                 switch (parameterSet.Action)
                 {
                     case ScriptingAction.ShowGUI:
@@ -34,7 +35,10 @@
                         wnd.Show();
                         break;
                     case ScriptingAction.Script:
-                        var scripter = new SqlServer2012Scripter();
+                        scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile, parameterSet.ScriptData);
+                        this.Shutdown((int)DegusExitCode.Success);
+                        break;
+                    case ScriptingAction.ScriptFromConfig:
                         scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile, parameterSet.ScriptData);
                         this.Shutdown((int)DegusExitCode.Success);
                         break;

@@ -7,5 +7,6 @@
     {
         ShowGUI,
         Script,
+        ScriptFromConfig,
     }
 }
