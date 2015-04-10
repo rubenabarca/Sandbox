@@ -11,7 +11,7 @@
 
     public class SqlServer2012Scripter : IScripter
     {
-        public void WriteScript(string serverName, string databaseName, bool useSingleFile = true, string outputPath = null, bool overwriteFile = true, bool scriptData = false)
+        public void WriteScript(string serverName, string databaseName, bool useSingleFile = true, string outputPath = null, bool overwriteFile = true, bool scriptData = false, IEnumerable<TableConfiguration> tableConfigurations = null)
         {
             var server = new Server(serverName);
 
@@ -42,6 +42,13 @@
 
             foreach (Table table in database.Tables)
             {
+                if (tableConfigurations != null)
+                {
+                    var currentTableConfiguration = (from tableConfiguration in tableConfigurations
+                                                     where tableConfiguration.TableName == table.Name
+                                                     select tableConfiguration).FirstOrDefault();
+                    scripter.Options.ScriptData = currentTableConfiguration == null ? scriptData : currentTableConfiguration.ScriptData;
+                }
                 var scriptCollection = scripter.EnumScript(new Urn[] { table.Urn });
                 if (!useSingleFile)
                 {

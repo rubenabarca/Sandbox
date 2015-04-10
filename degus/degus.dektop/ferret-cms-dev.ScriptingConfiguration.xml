@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScriptingConfiguration
+    ServerName=".\SQLExpress"
+    DatabaseName="ferret-cms-dev"
+    UseSingleFile="True"
+    OutputPath=".\ferret-cms-dev.SCHEMA-and-DATA.sql"
+    OverwriteFile="True"
+    ScriptData="True"
+    >
+    <TableConfigurations>
+        <TableConfiguration TableName="aspnet_Membership" ScriptData="False"/>
+    </TableConfigurations>
+</ScriptingConfiguration>

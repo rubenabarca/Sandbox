@@ -39,7 +39,8 @@
                         this.Shutdown((int)DegusExitCode.Success);
                         break;
                     case ScriptingAction.ScriptFromConfig:
-                        scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile, parameterSet.ScriptData);
+                        parameterSet = ParameterParser.GetScriptingConfigurationFromFile(parameterSet.ConfigFile);
+                        scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile, parameterSet.ScriptData, parameterSet.TableConfigurations);
                         this.Shutdown((int)DegusExitCode.Success);
                         break;
                     default:
