@@ -129,6 +129,33 @@
                 }
             }
 
+            var userDefinedFunctions = (from UserDefinedFunction userDefinedFunction in database.UserDefinedFunctions
+                                        where !userDefinedFunction.IsSystemObject
+                                        select userDefinedFunction);
+
+
+            foreach (UserDefinedFunction userDefinedFunction in userDefinedFunctions)
+            {
+                var scriptCollection = scripter.EnumScript(new Urn[] { userDefinedFunction.Urn });
+                if (!useSingleFile)
+                {
+                    var outputFile = Path.Combine(outputPath, string.Format("{0}.{1}.{2}.sql", userDefinedFunction.Schema, userDefinedFunction.Name, "UserDefinedFunction"));
+                    if (overwriteFile && File.Exists(outputFile))
+                    {
+                        File.Delete(outputFile);
+                    }
+                    scriptTextWriter = new StreamWriter(outputFile);
+                }
+                foreach (var scriptString in scriptCollection)
+                {
+                    scriptTextWriter.WriteLine(scriptString);
+                }
+                if (!useSingleFile)
+                {
+                    scriptTextWriter.Close();
+                }
+            }
+
             if (useSingleFile)
             {
                 scriptTextWriter.Close();
