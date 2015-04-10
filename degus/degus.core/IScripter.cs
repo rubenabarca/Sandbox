@@ -8,6 +8,6 @@
 
     public interface IScripter
     {
-        void WriteScript(string serverName, string databaseName, bool useSingleFile = true, string outputPath = null, bool overwriteFile = true);
+        void WriteScript(string serverName, string databaseName, bool useSingleFile = true, string outputPath = null, bool overwriteFile = true, bool scriptData = false);
     }
 }

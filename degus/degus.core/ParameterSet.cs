@@ -15,6 +15,7 @@
         public bool UseSingleFile { get; set; }
         public string OutputPath { get; set; }
         public bool OverwriteFile { get; set; }
+        public bool ScriptData { get; set; }
 
         public ParameterSet()
         {

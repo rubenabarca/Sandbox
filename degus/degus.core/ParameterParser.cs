@@ -42,6 +42,7 @@
                             {
                                 parameterSet.OverwriteFile = GetBooleanParameterValue(parameterStringArray, "OverwriteFile", defaultValue: true);
                             }
+                            parameterSet.ScriptData = GetBooleanParameterValue(parameterStringArray, "ScriptData");
                         }
                         break;
                     default:

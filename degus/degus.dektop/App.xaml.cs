@@ -35,7 +35,7 @@
                         break;
                     case ScriptingAction.Script:
                         var scripter = new SqlServer2012Scripter();
-                        scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile);
+                        scripter.WriteScript(parameterSet.ServerName, parameterSet.DatabaseName, parameterSet.UseSingleFile, parameterSet.OutputPath, parameterSet.OverwriteFile, parameterSet.ScriptData);
                         this.Shutdown((int)DegusExitCode.Success);
                         break;
                     default:
