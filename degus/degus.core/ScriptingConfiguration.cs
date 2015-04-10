@@ -19,11 +19,11 @@
     [Serializable]
     public class ScriptingConfiguration
     {
-        [NonSerialized]
+        [XmlIgnore]
         public bool IsValid { get; set; }
-        [NonSerialized]
+        [XmlIgnore]
         public string ConfigFile { get; set; }
-        [XmlAttribute]
+        [XmlIgnore]
         public ScriptingAction Action { get; set; }
         [XmlAttribute]
         public string ServerName { get; set; }
