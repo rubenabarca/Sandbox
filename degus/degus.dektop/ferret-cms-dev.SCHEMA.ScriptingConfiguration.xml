@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScriptingConfiguration
+    ServerName=".\SQLExpress"
+    DatabaseName="ferret-cms-dev"
+    UseSingleFile="false"
+    OutputPath=".\ferret-cms-dev.SCHEMA\"
+    OverwriteFile="true"
+    ScriptData="false"
+    />

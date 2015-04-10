@@ -14,6 +14,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		debug-script|Any CPU = debug-script|Any CPU
 		debug-scriptFromConfig|Any CPU = debug-scriptFromConfig|Any CPU
+		debug-scriptFromConfig-Schema|Any CPU = debug-scriptFromConfig-Schema|Any CPU
 		debug-script-mutifile|Any CPU = debug-script-mutifile|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
@@ -24,6 +25,8 @@ Global
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-script|Any CPU.Build.0 = debug-script|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-scriptFromConfig|Any CPU.ActiveCfg = debug-scriptFromConfig|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-scriptFromConfig|Any CPU.Build.0 = debug-scriptFromConfig|Any CPU
+		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-scriptFromConfig-Schema|Any CPU.ActiveCfg = debug-scriptFromConfig-Schema|Any CPU
+		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-scriptFromConfig-Schema|Any CPU.Build.0 = debug-scriptFromConfig-Schema|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-script-mutifile|Any CPU.ActiveCfg = debug-script-mutifile|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-script-mutifile|Any CPU.Build.0 = debug-script-mutifile|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,6 +37,8 @@ Global
 		{212904B6-00C9-41D9-94A6-22428276E205}.debug-script|Any CPU.Build.0 = debug-script|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.debug-scriptFromConfig|Any CPU.ActiveCfg = debug-scriptFromConfig|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.debug-scriptFromConfig|Any CPU.Build.0 = debug-scriptFromConfig|Any CPU
+		{212904B6-00C9-41D9-94A6-22428276E205}.debug-scriptFromConfig-Schema|Any CPU.ActiveCfg = debug-scriptFromConfig-Schema|Any CPU
+		{212904B6-00C9-41D9-94A6-22428276E205}.debug-scriptFromConfig-Schema|Any CPU.Build.0 = debug-scriptFromConfig-Schema|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.debug-script-mutifile|Any CPU.ActiveCfg = debug-script-mutifile|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.debug-script-mutifile|Any CPU.Build.0 = debug-script-mutifile|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,6 +49,8 @@ Global
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-script|Any CPU.Build.0 = Debug|Any CPU
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-scriptFromConfig|Any CPU.ActiveCfg = debug-scriptFromConfig|Any CPU
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-scriptFromConfig|Any CPU.Build.0 = debug-scriptFromConfig|Any CPU
+		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-scriptFromConfig-Schema|Any CPU.ActiveCfg = debug-scriptFromConfig-Schema|Any CPU
+		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-scriptFromConfig-Schema|Any CPU.Build.0 = debug-scriptFromConfig-Schema|Any CPU
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-script-mutifile|Any CPU.ActiveCfg = debug-script-mutifile|Any CPU
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.debug-script-mutifile|Any CPU.Build.0 = debug-script-mutifile|Any CPU
 		{22183F90-7BD0-42CD-888C-C46B371B80C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
