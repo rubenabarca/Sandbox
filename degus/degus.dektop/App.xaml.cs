@@ -35,6 +35,7 @@
                     case ScriptingAction.Script:
                         break;
                     default:
+                        Console.WriteLine("Unknown action");
                         break;
                 }
             }
