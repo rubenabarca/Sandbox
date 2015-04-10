@@ -2,12 +2,12 @@
 <ScriptingConfiguration
     ServerName=".\SQLExpress"
     DatabaseName="ferret-cms-dev"
-    UseSingleFile="True"
+    UseSingleFile="true"
     OutputPath=".\ferret-cms-dev.SCHEMA-and-DATA.sql"
-    OverwriteFile="True"
-    ScriptData="True"
+    OverwriteFile="true"
+    ScriptData="true"
     >
     <TableConfigurations>
-        <TableConfiguration TableName="aspnet_Membership" ScriptData="False"/>
+        <TableConfiguration TableName="aspnet_Membership" ScriptData="false"/>
     </TableConfigurations>
 </ScriptingConfiguration>
