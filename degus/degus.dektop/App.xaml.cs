@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace degus.dektop
+﻿namespace Degus
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Data;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Windows;
+
     public partial class App : Application
     {
 
@@ -21,12 +18,26 @@ namespace degus.dektop
 
         void App_Startup(object sender, StartupEventArgs e)
         {
-            MainWindow wnd = new MainWindow();
-            foreach (var arg in e.Args)
+            var parameterSet = ParameterParser.GetParameterSet(e.Args);
+            if(!parameterSet.IsValid)
             {
-
+                // TODO: implement more informative error reporting.
+                Console.WriteLine("Invalid parameters");
             }
-            wnd.Show();
+            else
+            {
+                switch (parameterSet.Action)
+                {
+                    case ScriptingAction.ShowGUI:
+                        MainWindow wnd = new MainWindow();
+                        wnd.Show();
+                        break;
+                    case ScriptingAction.Script:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

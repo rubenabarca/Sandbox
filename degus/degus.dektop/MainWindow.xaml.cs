@@ -1,4 +1,4 @@
-﻿namespace degus.dektop
+﻿namespace Degus
 {
     using System;
     using System.Collections.Generic;
