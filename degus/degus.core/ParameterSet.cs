@@ -10,6 +10,8 @@
     {
         public bool IsValid { get; set; }
         public ScriptingAction Action { get; set; }
+        public string ServerName { get; set; }
+        public string DatabaseName { get; set; }
 
         public ParameterSet()
         {

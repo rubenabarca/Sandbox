@@ -19,10 +19,11 @@
         void App_Startup(object sender, StartupEventArgs e)
         {
             var parameterSet = ParameterParser.GetParameterSet(e.Args);
-            if(!parameterSet.IsValid)
+            if (!parameterSet.IsValid)
             {
                 // TODO: implement more informative error reporting.
                 Console.WriteLine("Invalid parameters");
+                this.Shutdown((int)DegusExitCode.InvalidParameters);
             }
             else
             {
@@ -33,9 +34,11 @@
                         wnd.Show();
                         break;
                     case ScriptingAction.Script:
+                        this.Shutdown((int)DegusExitCode.Success);
                         break;
                     default:
                         Console.WriteLine("Unknown action");
+                        this.Shutdown((int)DegusExitCode.InvalidParameters);
                         break;
                 }
             }

@@ -10,15 +10,20 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		debug-script|Any CPU = debug-script|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-script|Any CPU.ActiveCfg = debug-script|Any CPU
+		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.debug-script|Any CPU.Build.0 = debug-script|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C63AF9-FB8A-424C-9BB5-E93DD0D18FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212904B6-00C9-41D9-94A6-22428276E205}.debug-script|Any CPU.ActiveCfg = debug-script|Any CPU
+		{212904B6-00C9-41D9-94A6-22428276E205}.debug-script|Any CPU.Build.0 = debug-script|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{212904B6-00C9-41D9-94A6-22428276E205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
