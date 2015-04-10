@@ -69,6 +69,29 @@
                 }
             }
 
+            scripter.Options.ScriptData = false;
+            foreach (View view in database.Views)
+            {
+                var scriptCollection = scripter.EnumScript(new Urn[] { view.Urn });
+                if (!useSingleFile)
+                {
+                    var outputFile = Path.Combine(outputPath, string.Format("{0}.{1}.{2}.sql", view.Schema, view.Name, "View"));
+                    if (overwriteFile && File.Exists(outputFile))
+                    {
+                        File.Delete(outputFile);
+                    }
+                    scriptTextWriter = new StreamWriter(outputFile);
+                }
+                foreach (var scriptString in scriptCollection)
+                {
+                    scriptTextWriter.WriteLine(scriptString);
+                }
+                if (!useSingleFile)
+                {
+                    scriptTextWriter.Close();
+                }
+            }
+
             if (useSingleFile)
             {
                 scriptTextWriter.Close();
