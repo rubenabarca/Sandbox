@@ -30,12 +30,33 @@
                         parameterSet.ServerName = GetParameterValue(parameterStringArray, "ServerName");
                         parameterSet.DatabaseName = GetParameterValue(parameterStringArray, "DatabaseName");
                         parameterSet.IsValid = !string.IsNullOrEmpty(parameterSet.ServerName) && !string.IsNullOrEmpty(parameterSet.DatabaseName);
+                        if (parameterSet.IsValid)
+                        {
+                            parameterSet.UseSingleFile = GetBooleanParameterValue(parameterStringArray, "UseSingleFile", defaultValue: true);
+                            parameterSet.OutputPath = GetParameterValue(parameterStringArray, "OutputPath");
+                            if (parameterSet.UseSingleFile && string.IsNullOrEmpty(parameterSet.OutputPath))
+                            {
+                                parameterSet.IsValid = false;
+                            }
+                            else
+                            {
+                                parameterSet.OverwriteFile = GetBooleanParameterValue(parameterStringArray, "OverwriteFile", defaultValue: true);
+                            }
+                        }
                         break;
                     default:
                         break;
                 }
             }
             return parameterSet;
+        }
+
+        private static bool GetBooleanParameterValue(string[] parameterStringArray, string parameterName, bool defaultValue = false)
+        {
+            bool result;
+            if(!bool.TryParse(GetParameterValue(parameterStringArray, parameterName), out result))
+                result = defaultValue;
+            return result;
         }
 
         private static string GetParameterValue(string[] parameterStringArray, string parameterName)

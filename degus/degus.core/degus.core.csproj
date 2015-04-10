@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DegusExitCode.cs" />
+    <Compile Include="IScripter.cs" />
     <Compile Include="ParameterParser.cs" />
     <Compile Include="ParameterSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

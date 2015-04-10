@@ -12,10 +12,15 @@
         public ScriptingAction Action { get; set; }
         public string ServerName { get; set; }
         public string DatabaseName { get; set; }
+        public bool UseSingleFile { get; set; }
+        public string OutputPath { get; set; }
+        public bool OverwriteFile { get; set; }
 
         public ParameterSet()
         {
             IsValid = true;
+            UseSingleFile = true;
+            OverwriteFile = true;
         }
     }
 }
