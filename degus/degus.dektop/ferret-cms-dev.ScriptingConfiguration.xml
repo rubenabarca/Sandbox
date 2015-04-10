@@ -2,12 +2,36 @@
 <ScriptingConfiguration
     ServerName=".\SQLExpress"
     DatabaseName="ferret-cms-dev"
-    UseSingleFile="true"
-    OutputPath=".\ferret-cms-dev.SCHEMA-and-DATA.sql"
+    UseSingleFile="false"
+    OutputPath=".\ferret-cms-dev.SCHEMA-and-DATA\"
     OverwriteFile="true"
     ScriptData="true"
     >
     <TableConfigurations>
+        <TableConfiguration TableName="aspnet_Members" ScriptData="false"/>
         <TableConfiguration TableName="aspnet_Membership" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Membership_prod" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_PersonalizationPerUser" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Profile" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Profile_prod" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Users" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Users_InRoles_prod" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_Users_prod" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_UsersInRoles" ScriptData="false"/>
+        <TableConfiguration TableName="aspnet_WebEvent_Events" ScriptData="false"/>
+        <TableConfiguration TableName="cmsMember" ScriptData="false"/>
+        <TableConfiguration TableName="cmsMember2MemberGroup" ScriptData="false"/>
+        <TableConfiguration TableName="dnmPvdIntegrationMatch" ScriptData="false"/>
+        <TableConfiguration TableName="oldUserId_Email" ScriptData="false"/>
+        <TableConfiguration TableName="oldUserIds_newUserIds_DNM" ScriptData="false"/>
+        <TableConfiguration TableName="oldUsersProfileProperties" ScriptData="false"/>
+        <TableConfiguration TableName="temp_tableIndex" ScriptData="false"/>
+        <TableConfiguration TableName="temp_tableIndexString" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoLog" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoUser" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoUser2app" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoUser2NodeNotify" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoUser2NodePermission" ScriptData="false"/>
+        <TableConfiguration TableName="umbracoUserLogins" ScriptData="false"/>
     </TableConfigurations>
 </ScriptingConfiguration>
