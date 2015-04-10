@@ -102,6 +102,33 @@
                 }
             }
 
+            var userStoredProcedures = (from StoredProcedure storedProcedure in database.StoredProcedures
+                                        where !storedProcedure.IsSystemObject
+                                        select storedProcedure);
+
+
+            foreach (StoredProcedure storeProcedure in userStoredProcedures)
+            {
+                var scriptCollection = scripter.EnumScript(new Urn[] { storeProcedure.Urn });
+                if (!useSingleFile)
+                {
+                    var outputFile = Path.Combine(outputPath, string.Format("{0}.{1}.{2}.sql", storeProcedure.Schema, storeProcedure.Name, "StoredProcedure"));
+                    if (overwriteFile && File.Exists(outputFile))
+                    {
+                        File.Delete(outputFile);
+                    }
+                    scriptTextWriter = new StreamWriter(outputFile);
+                }
+                foreach (var scriptString in scriptCollection)
+                {
+                    scriptTextWriter.WriteLine(scriptString);
+                }
+                if (!useSingleFile)
+                {
+                    scriptTextWriter.Close();
+                }
+            }
+
             if (useSingleFile)
             {
                 scriptTextWriter.Close();
