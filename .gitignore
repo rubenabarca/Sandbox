@@ -198,3 +198,6 @@ FakesAssemblies/
 # agouti files
 /agouti/agouti.web/App_Data/NuGetBackup/
 /agouti/agouti.web/connections.config
+/agouti/agouti.web/App_Data/Logs
+/agouti/agouti.web/App_Data/TEMP
+/agouti/agouti.web/App_Data/umbraco.config
