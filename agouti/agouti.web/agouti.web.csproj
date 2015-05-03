@@ -265,6 +265,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="App_Data\packages\created\createdPackages.config" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
+    <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\VocabularyAPI.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
