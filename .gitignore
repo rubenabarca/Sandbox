@@ -194,4 +194,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
-/agouti/agouti.web/App_Data/NuGetBackup/20150502-223558
+
+# agouti files
+/agouti/agouti.web/App_Data/NuGetBackup/
+/agouti/agouti.web/connections.config
