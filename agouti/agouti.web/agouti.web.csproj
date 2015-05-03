@@ -15,7 +15,7 @@
     <RootNamespace>agouti.web</RootNamespace>
     <AssemblyName>agouti.web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -302,7 +302,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60874</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59037/</IISUrl>
+          <IISUrl>http://local.agouti.com/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

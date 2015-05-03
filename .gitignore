@@ -201,3 +201,5 @@ FakesAssemblies/
 /agouti/agouti.web/App_Data/Logs
 /agouti/agouti.web/App_Data/TEMP
 /agouti/agouti.web/App_Data/umbraco.config
+/agouti/agouti.web/App_Data/preview
+/agouti/agouti.web/App_Data/access.config
