@@ -204,6 +204,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="App_Plugins\Archetype\langs\da.js" />
+    <Content Include="App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="App_Plugins\Archetype\langs\de.js" />
+    <Content Include="App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="App_Plugins\Archetype\langs\en.js" />
+    <Content Include="App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="App_Plugins\Archetype\langs\es.js" />
+    <Content Include="App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.html" />
     <Content Include="Config\grid.editors.config.js" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
@@ -237,6 +263,8 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="App_Data\packages\created\createdPackages.config" />
+    <Content Include="App_Data\packages\installed\installedPackages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
