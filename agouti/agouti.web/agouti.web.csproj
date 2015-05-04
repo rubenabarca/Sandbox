@@ -236,6 +236,7 @@
     <Content Include="App_Plugins\Archetype\views\archetype.default.html" />
     <Content Include="App_Plugins\Archetype\views\archetype.html" />
     <Content Include="Config\grid.editors.config.js" />
+    <Content Include="css\Style.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Web.config" />
@@ -294,7 +295,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <PropertyGroup>

@@ -2,12 +2,16 @@
 @{
     Layout = "Master.cshtml";
 }
-<div>
-    <p><img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" /></p>
-    <ul>
-        @foreach (var questionOption in Model.QuestionOptions)
-        {
-            <li>@questionOption</li>
-        }
-    </ul>
+<div class="questionnaire">
+    <div class="questionImage">
+        <img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" />
+    </div>
+    <div class="questionOptionsWrapper">
+        <ul>
+            @foreach (var questionOption in Model.QuestionOptions)
+            {
+                <li><a href="#">@questionOption</a></li>
+            }
+        </ul>
+    </div>
 </div>
