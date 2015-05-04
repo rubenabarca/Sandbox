@@ -1,4 +1,13 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Agouti.Web.Models.HomePageModel>
 @{
     Layout = "Master.cshtml";
 }
+<div>
+    <p><img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" /></p>
+    <ul>
+        @foreach (var questionOption in Model.QuestionOptions)
+        {
+            <li>@questionOption</li>
+        }
+    </ul>
+</div>
