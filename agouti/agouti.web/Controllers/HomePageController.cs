@@ -29,10 +29,19 @@
                 return null;
             }
 
+            PageModel.TestCategories = new List<string>(UmbracoExtensions.GetDropDownDataTypeValues(Globals.TestCategoryId));
+            PageModel.TestCategory = Request.QueryString["category"];
+
+            if (string.IsNullOrEmpty(PageModel.TestCategory))
+            {
+                return null;
+            }
+
+
             var vocabularyContainer = Umbraco.ContentAtRoot().Where("DocumentTypeAlias == \"VocabularyApi\"").FirstOrDefault();
 
             var animalEntries = ((ArchetypeModel)vocabularyContainer.vocabularyEntries)
-                .Where(entry => entry.GetValue<JArray>("tags").ToObject<string[]>().Contains("animals"))
+                .Where(entry => entry.GetValue<JArray>("tags").ToObject<string[]>().Contains(PageModel.TestCategory))
                 .OrderBy(x => _randomGenerator.Next())
                 .Take(4)
                 .ToArray();

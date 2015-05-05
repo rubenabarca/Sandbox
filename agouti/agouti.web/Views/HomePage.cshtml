@@ -4,19 +4,34 @@
 }
 @if (Umbraco.MemberIsLoggedOn())
 {
-    <div class="questionnaire">
-        <div class="questionImage">
-            <img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" />
-        </div>
-        <div class="questionOptionsWrapper">
-            <ul>
-                @foreach (var questionOption in Model.QuestionOptions)
+    if (string.IsNullOrEmpty(Model.TestCategory))
+    {
+        <form method="get">
+            <select name="category">
+                @foreach (var testCategory in Model.TestCategories)
                 {
-                    <li><a class="question-option" href="#">@questionOption</a></li>
+                    <option value="@testCategory">@testCategory</option>
                 }
-            </ul>
+            </select>
+            <input type="submit" />
+        </form>
+    }
+    else
+    {
+        <div class="questionnaire">
+            <div class="questionImage">
+                <img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" />
+            </div>
+            <div class="questionOptionsWrapper">
+                <ul>
+                    @foreach (var questionOption in Model.QuestionOptions)
+                    {
+                        <li><a class="question-option" href="#">@questionOption</a></li>
+                    }
+                </ul>
+            </div>
         </div>
-    </div>
+    }
 }
 <div class="footer">
     @Html.Action("MemberLogin", "MemberLoginSurface")

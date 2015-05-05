@@ -10,6 +10,8 @@
     public class HomePageModel : AgoutiModel
     {
 
+        public IEnumerable<string> TestCategories { get; set; }
+        public string TestCategory { get; set; }
         public string MemberLoginName { get; set; }
         public string QuestionImageUriString { get; set; }
         public IEnumerable<string> QuestionOptions { get; set; }
