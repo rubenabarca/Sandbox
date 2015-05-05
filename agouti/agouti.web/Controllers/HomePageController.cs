@@ -9,6 +9,7 @@
     using Archetype.Extensions;
     using Newtonsoft.Json.Linq;
     using Umbraco.Core.Models;
+    using System.Web.Mvc;
 
     public class HomePageController : AgoutiController<HomePageModel>
     {
@@ -22,6 +23,12 @@
 
         protected override System.Web.Mvc.ActionResult OnIndexAction()
         {
+
+            if (!Umbraco.MemberIsLoggedOn())
+            {
+                return null;
+            }
+
             var vocabularyContainer = Umbraco.ContentAtRoot().Where("DocumentTypeAlias == \"VocabularyApi\"").FirstOrDefault();
 
             var animalEntries = ((ArchetypeModel)vocabularyContainer.vocabularyEntries)
@@ -53,7 +60,7 @@
                                          let words = animalEntry.GetValue<ArchetypeModel>("words")
                                          let englishWords = words.Where(w => w.GetValue("language") == "English").Select(w => w.GetValue("word")).FirstOrDefault()
                                          select englishWords).ToArray();
-                                        
+
 
             return null;
         }

@@ -2,16 +2,22 @@
 @{
     Layout = "Master.cshtml";
 }
-<div class="questionnaire">
-    <div class="questionImage">
-        <img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" />
+@if (Umbraco.MemberIsLoggedOn())
+{
+    <div class="questionnaire">
+        <div class="questionImage">
+            <img src="@Model.QuestionImageUriString" alt="@Model.QuestionImageUriString" />
+        </div>
+        <div class="questionOptionsWrapper">
+            <ul>
+                @foreach (var questionOption in Model.QuestionOptions)
+                {
+                    <li><a class="question-option" href="#">@questionOption</a></li>
+                }
+            </ul>
+        </div>
     </div>
-    <div class="questionOptionsWrapper">
-        <ul>
-            @foreach (var questionOption in Model.QuestionOptions)
-            {
-                <li><a href="#">@questionOption</a></li>
-            }
-        </ul>
-    </div>
+}
+<div class="footer">
+    @Html.Action("MemberLogin", "MemberLoginSurface")
 </div>
