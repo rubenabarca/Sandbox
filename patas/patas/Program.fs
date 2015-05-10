@@ -1,19 +1,14 @@
 ﻿open System
 
+
+let nthPiDigit k = 
+    (1./(16.**k)) * (4./(8.*k+1.) - 2./(8.*k+4.) - 1./(8.*k+5.) - 1./(8.*k+6.))
+
 [<EntryPoint>]
 let main args =
-    let mutable a = (1.+1./sqrt(2.))/2.
-    let mutable c = 1./(8.*a)
-    let mutable s = a**2.
-    let mutable  f = 1.
-    let precision = 0.00000000001
-    let mutable absC = abs(c)
-    while absC < precision do
-        a <- (a+sqrt((a-c)*(a+c)))/2.
-        c <- (c**2.) / (4.*a)
-        f <- 2.*f
-        s <- s-f*c**2.
-        absC <- abs(c)
-        
+    let precision = 1.
+    let piDigitList = List.map nthPiDigit [1.0 .. precision]
+    let piResult = List.reduce (+) piDigitList
+    Console.WriteLine(piResult)
     Console.ReadLine() |> ignore
     0
