@@ -25,19 +25,25 @@
             return c;
         }
 
+        static double GetPiCalc(double k, double n)
+        {
+            return ModularExponentiation(16.0, n - k, 8 * k + 1) / (8 * k + 1);
+        }
+
         static void Main(string[] args)
         {
             var stopwatch = new Stopwatch();
-            double b = 18.0, e = 36.0, m = 497.0;
+            double n = 1000000.0;
             stopwatch.Start();
-            var c = ModularExponentiationDirect(b, e, m);
+
+            double k = 0.0;
+            for (int i = 0; i <= n; i++)
+            {
+                k += GetPiCalc(i, n) % 1.0;
+            }
+
             stopwatch.Stop();
-            Console.WriteLine("calculated modular exponentiation directly in {0}: {1}", stopwatch.Elapsed, c);
-            stopwatch.Reset();
-            stopwatch.Start();
-            c = ModularExponentiation(b, e, m);
-            stopwatch.Stop();
-            Console.WriteLine("calculated modular exponentiation alternate method in {0}: {1}", stopwatch.Elapsed, c);
+            Console.WriteLine("calculated Nth digit of P in {0}: {1}", stopwatch.Elapsed, k);
             Console.ReadLine();
         }
     }
