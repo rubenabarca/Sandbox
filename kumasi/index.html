@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practicing</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+</head>
+<style>
+body{
+    background-color: rgb(180, 228, 228);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+</style>
+<body>
+    <script type="application/processing">
+        void setup(){
+            size(400, 400);
+            backgroundShade = random(255);
+        }
+        
+        void draw(){
+            background(64);
+            ellipse(mouseX, mouseY, 20, 20);
+            ellipse(200,150,70,87);
+        
+            
+            document.getElementById("label").innerHTML = "Mouse coordinates: " + mouseX + ", " + mouseY;
+        }
+    </script>
+    <canvas id="sketch"> </canvas>
+<h1>I´m practicing</h1>
+<p>This is only a test.</p>
+<p>This is only a test, the second test</p>
+
+</body>
+</html>
