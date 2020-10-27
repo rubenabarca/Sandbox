@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .center {
+        width: 100%;
+
+        border: 5px solid #ffff90;
+    }
+
+    .center-div {
+        width: 30%;
+        margin: auto;
+
+    }
+
+    canvas {
+        display: inline;
+    }
+
+    .canvas-container {
+        width: 80%;
+        margin: auto;
+
+    }
+
+    body {
+        background-color: rgb(180, 228, 228);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+</style>
+
+<body>
+    <script type="application/processing">
+        void setup(){
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            size(vw, vh);
+            backgroundShade = random(255);
+        }
+        
+        void draw(){
+            background(64);
+            
+            setInterval(function(){ 
+                const shapeindex=(int)(Math.random()*3);
+                const ramdomr=(int)(Math.random()*255);
+                const ramdomg=(int)(Math.random()*255);
+                const ramdomb=(int)(Math.random()*255);
+                fill(ramdomr,ramdomg,ramdomb);
+                switch(shapeindex){
+            
+                    case 0:
+                    ellipse(mouseX, mouseY, 20, 20);
+                    break;
+                    case 1:
+                    triangle(mouseX,mouseY,mouseX+20,mouseY-20,mouseX+20,mouseY+20);
+                    break;
+                    case 2:
+                    rect(mouseX,mouseY,20,20);
+                    break;
+                }
+                
+            }, 16);
+            
+        
+            
+            document.getElementById("label").innerHTML = "Mouse coordinates: " + mouseX + ", " + mouseY;
+        }
+    </script>
+    <canvas id="sketch"> </canvas>
+
+
+
+    <h1>You´re in example 2</h1>
+    <p>This is only a test.</p>
+    <p>This is only a test, the second test</p>
+    <a href="index.html">Go to index!</a>
+    <div class="center-div">
+        <img class="center" src="images/3faf0372cf1a41245b2fba14a604b07d.jpg" />
+    </div>
+
+
+</body>
+
+</html>
