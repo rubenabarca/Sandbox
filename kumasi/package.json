@@ -1,0 +1,26 @@
+{
+  "name": "kumasi",
+  "version": "1.0.0",
+  "description": "testing projects with processing .js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenabarca/Sandbox.git"
+  },
+  "keywords": [
+    "javascript",
+    "processing"
+  ],
+  "author": "Rubén Abarca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubenabarca/Sandbox/issues"
+  },
+  "homepage": "https://github.com/rubenabarca/Sandbox#readme",
+  "dependencies": {
+    "processing-js": "^1.6.6"
+  }
+}
