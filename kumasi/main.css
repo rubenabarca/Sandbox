@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(205, 228, 100);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+canvas {
+    display: inline;
+}
+
+.center {
+    width: 100%;
+
+    border: 5px solid #ffff90;
+}
+
+.center-div {
+    width: 30%;
+    margin: auto;
+
+}
+
+
+
+.canvas-container {
+    width: 80%;
+    margin: auto;
+
+}

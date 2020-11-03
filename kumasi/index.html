@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Practicing</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
-</head>
-<style>
-body{
-    background-color: rgb(180, 228, 228);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
-}
-</style>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <title>Practicing</title>
+    <script src="processing.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
 <body>
+
     <script type="application/processing">
-        void setup(){
-            size(400, 400);
-            backgroundShade = random(255);
-        }
+    void setup(){
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        size(vw, vh);
+        backgroundShade = random(255);
+    }
+
+    void draw(){
+        background(64);
         
-        void draw(){
-            background(64);
-            ellipse(mouseX, mouseY, 20, 20);
-            ellipse(200,150,70,87);
+        setInterval(function(){ 
+            const shapeindex=(int)(Math.random()*3);
+            const ramdomr=(int)(Math.random()*255);
+            const ramdomg=(int)(Math.random()*255);
+            const ramdomb=(int)(Math.random()*255);
+            fill(ramdomr,ramdomg,ramdomb);
+            switch(shapeindex){
         
+                case 0:
+                ellipse(mouseX, mouseY, 20, 20);
+                break;
+                case 1:
+                triangle(mouseX,mouseY,mouseX+20,mouseY-20,mouseX+20,mouseY+20);
+                break;
+                case 2:
+                rect(mouseX,mouseY,20,20);
+                break;
+            }
             
-            document.getElementById("label").innerHTML = "Mouse coordinates: " + mouseX + ", " + mouseY;
-        }
-    </script>
+        }, 16);
+        
+
+        
+        document.getElementById("label").innerHTML = "Mouse coordinates: " + mouseX + ", " + mouseY;
+    }
+
+ </script>
     <canvas id="sketch"> </canvas>
-<h1>I´m practicing</h1>
-<p>This is only a test.</p>
-<p>This is only a test, the second test</p>
-<a href="https://www.w3schools.com">Visit W3Schools.com!</a>
-<a href="Example2.html">Go to Example 2</a>
+    <h1>I´m practicing</h1>
+    <p>This is only a test.</p>
+    <p>This is only a test, the second test</p>
+    <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+    <a href="Example2.html">Go to Example 2</a>
 </body>
+
 </html>
