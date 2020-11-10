@@ -1,0 +1,43 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("images/dessert.jpg");
+    background-size: cover;
+}
+
+.flex-caa {
+    display: flex;
+}
+
+.flex-caa-child {
+    flex: 1;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+
+}
+.title1{
+    color:white;
+    font-size: 12pt;
+
+}
+.title2{
+    color:white;
+    font-size:24pt;
+    font-weight: bold;
+    border-top: white solid 3px;
+}
+.button{
+    color:white;
+    border:3px;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: white;
+    font-size: 12pt;
+    text-transform: uppercase;
+    float:left;
+    padding-left: 26px;
+    padding-right: 26px;
+}
