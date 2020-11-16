@@ -21,13 +21,17 @@ a{
 .title1{
     color:white;
     font-size: 12pt;
+    margin-left: 290px;
 
 }
 .title2{
     color:white;
-    font-size:24pt;
+    font-size:30pt;
     font-weight: bold;
     border-top: white solid 3px;
+    margin-left: 12px;
+    margin-top:20px;
+    text-align: center;
 }
 .button{
     color:white;
@@ -40,4 +44,6 @@ a{
     float:left;
     padding-left: 26px;
     padding-right: 26px;
+    margin-left: 62px;
+    margin-top: 200px;
 }
