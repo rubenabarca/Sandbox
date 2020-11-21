@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <title>Practicing</title>
+    <script src="processing.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <script type="application/processing">
+    void setup(){
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        size(vw, vh);
+        backgroundShade = random(255);
+    }
+
+    void draw(){
+        background(64);
+        var i;
+        var X;
+        var Y;
+        Y=75;
+        var t;
+        var Red;
+        Red=255;
+        var Green;
+        Green=200;
+        var Blue;
+        Blue=150;
+        for (t = 0; t < 8; t++){
+            X=1050;
+            
+            for (i = 0; i < 10; i++) { 
+                Red=Red-5;
+                Green=Green-10;
+                Blue=Blue-15;
+                if (Red<0){
+                    Red=255;
+                }
+                if (Green<0){
+                    Green=255;
+                }
+                if (Blue<0){
+                    Blue=255;
+                }
+                fill(Red,Green,Blue);
+                ellipse(X,Y,26,45);
+                rect(X-13,Y-23,26,45);
+                triangle(X,Y,X-30,Y,X-15,Y-30); 
+                X= X-100;
+            }
+            Y=Y+75;
+        }
+
+
+    }
+
+ </script>
+    <canvas id="sketch"> </canvas>
+    <h1>I´m practicing</h1>
+    <p>This is only a test.</p>
+    <p>This is only a test, the second test</p>
+    <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+    <a href="Example2.html">Go to Example 2</a>
+</body>
+
+</html>
