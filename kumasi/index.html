@@ -20,12 +20,21 @@
 
     void draw(){
         background(64);
-        var initialX= 450; 
-        ellipse(initialX,75,26,45); 
-        ellipse(initialX-100,75,26,45);
-        ellipse(initialX-200,75,26,45); 
-        ellipse(initialX-300,75,26,45);
-        
+        var i;
+        var X;
+        var Y;
+        Y=75;
+        var t;
+        for (t=0; t<8;t++){
+            X=1050;
+            for (i = 0; i < 10; i++) { 
+                ellipse(X,Y,26,45); 
+                X= X-100;
+            }
+            Y=Y+75;
+        }
+
+
     }
 
  </script>
