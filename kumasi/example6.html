@@ -23,22 +23,46 @@
         var angle;
         var X;
         var Y;
+        var Red=175;
+        var Green=90;
+        var Blue=175;
 
         if(mousePressed){
             ellipse(mouseX, mouseY, 20,20);
-            fill(175,90,175);
+            
             for (i = 0; i < 10; i++){
-                for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
-                    fill(175,90,175);
-                    X= mouseX+(i*27+27)*Math.cos(angle);
-                    Y= mouseY+(i*27+27)*Math.sin(angle);
-                    ellipse(X, Y, i*2+7,i*2+7); 
+            
+                Red=Red-5;
+                Green=Green-5;
+                Blue=Blue-15;
+                if (Red<0){
+                    Red=255;
                 }
+                if (Green<0){
+                    Green=255;
+                }
+                if (Blue<0){
+                    Blue=255;
+                }
+               drawSphereSet(i, Red, Green, Blue);
+
             }
            
         }
 
 
+    }
+
+    void drawSphereSet(i,Red,Green,Blue){
+        var angle; 
+        var X;
+        var Y;
+        for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
+            fill(Red,Green,Blue);
+            X= mouseX+(i*27+27)*Math.cos(angle+i/2);
+            Y= mouseY+(i*27+27)*Math.sin(angle+i/2);
+            ellipse(X, Y, i*2+7,i*2+7); 
+        }
     }
 
  </script>
