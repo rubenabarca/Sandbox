@@ -26,12 +26,16 @@
 
         if(mousePressed){
             ellipse(mouseX, mouseY, 20,20);
-            for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
-                fill(175,90,175);
-                X= mouseX+75*Math.cos(angle);
-                Y= mouseY+75*Math.sin(angle);
-                ellipse(X, Y, 35,35);
+            fill(175,90,175);
+            for (i = 0; i < 10; i++){
+                for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
+                    fill(175,90,175);
+                    X= mouseX+(i*27+27)*Math.cos(angle);
+                    Y= mouseY+(i*27+27)*Math.sin(angle);
+                    ellipse(X, Y, i*2+7,i*2+7); 
+                }
             }
+           
         }
 
 
