@@ -1,0 +1,87 @@
+<DOCTYPE html>
+    <html>
+    
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <title>Practicing </title>
+        <script src="processing.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    
+    <body>
+    
+        <script type="application/processing">
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        void setup(){
+            size(vw, vh);
+            backgroundShade = random(255);
+        }
+    
+        var mousePressedX;
+        var mousePressedY;
+
+        void draw(){
+            background(64);
+            var angle;
+            var Red=175;
+            var Green=90;
+            var Blue=175;
+           
+            if(mousePressed){
+                mousePressedX= mouseX;
+                mousePressedY= mouseY;
+            }
+            if(mousePressedX!==null){
+                ellipse(mousePressedX, mousePressedY, 20,20);
+            
+                for (i = 0; i < 10; i++){
+                
+                    Red=Red-5;
+                    Green=Green-5;
+                    Blue=Blue-15;
+                    if (Red<0){
+                        Red=255;
+                    }
+                    if (Green<0){
+                        Green=255;
+                    }
+                    if (Blue<0){
+                        Blue=255;
+                    }
+                    drawSphereSet(mousePressedX,mousePressedY,i, Red, Green, Blue,vh, vw);
+    
+                }
+            }
+           
+               
+        
+    
+    
+        }
+    
+        void drawSphereSet(mousePressedX,mousePressedY,i,Red,Green,Blue,vh, vw){
+            var angle; 
+            var X;
+            var Y;
+
+
+            for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
+                fill(Red,Green,Blue);
+                var angle1= angle+(mouseX/vw)*2*Math.PI*2;
+                X= mousePressedX+(i*60+27)*Math.cos(angle1+i/2);
+                Y= mousePressedY+(i*60+27)*Math.sin(angle1+i/2);
+                ellipse(X, Y, i*2+7,i*2+7); 
+            }
+        }
+    
+     </script>
+        <canvas id="sketch"> </canvas>
+        <h1>I´m practicing</h1>
+        <p>This is only a test.</p>
+        <p>This is only a test, the second test</p>
+        <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+        <a href="Example2.html">Go to Example 2</a>
+    </body>
+    
+    </html>
