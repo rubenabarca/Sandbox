@@ -64,13 +64,14 @@
             var angle; 
             var X;
             var Y;
-
+            var percentagebaseonmouseY;
 
             for (angle = 0; angle < 2*Math.PI; angle+=(2*Math.PI)/10){
                 fill(Red,Green,Blue);
                 var angle1= angle+(mouseX/vw)*2*Math.PI*2;
-                X= mousePressedX+(i*60+27)*Math.cos(angle1+i/2);
-                Y= mousePressedY+(i*60+27)*Math.sin(angle1+i/2);
+                percentagebaseonmouseY= mouseY/vh;
+                X= mousePressedX+(i*60+27)*percentagebaseonmouseY*Math.cos(angle1+i/2);
+                Y= mousePressedY+(i*60+27)*percentagebaseonmouseY*Math.sin(angle1+i/2);
                 ellipse(X, Y, i*2+7,i*2+7); 
             }
         }

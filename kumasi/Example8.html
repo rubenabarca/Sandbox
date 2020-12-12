@@ -1,0 +1,40 @@
+<DOCTYPE html>
+    <html>
+    
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <title>Practicing </title>
+        <script src="processing.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+    
+        <script type="application/processing">
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        void setup(){
+            size(vw, vh);
+            backgroundShade = random(255);
+        }
+    
+        const x={value:1,value2:1}; 
+
+        void draw(){
+            background(64);
+            if(x){
+                if(x.value===x.value2){
+                    ellipse(23,23,23,23);   
+                }
+            }
+            
+        }
+    
+       
+    
+     </script>
+        <canvas id="sketch"> </canvas>
+        
+    </body>
+    
+    </html>
