@@ -1,0 +1,66 @@
+Loop*10{
+    pantalla(400)/4=100
+    var A=100
+    var B=200
+    var C=300
+    var D=400
+
+    var t;
+
+    rect= (x,y,wh,wv) *4(A, B, C, D)
+    s= select Random.....var x
+    fill s: Random...
+
+    t=
+        if mousePressed(s){
+            -true-
+            -false-
+        }
+
+    if s=true{
+        give 10 points
+    }
+
+
+    if t=true{
+        restart;
+    }
+
+    give t{
+    final score
+    }
+
+    -----------------------------------------------------------------------------------------
+
+    Se divide la pantalla en 4 cuadrantes
+    Cada cuadrante se le denomina con una letra del abecedario (A, B, C y D)
+    Se crea en la ubicación de cada cuadrante una forma rectangular
+    Se le pide a la computadora que rellene cada rectangulo con un color al azar
+    Se crea un marcador que cuente los aciertos por puntaje de la persona,mediante variables y formas
+    Se le pide a la computadora que elija uno de los rectangulos al azar
+    La persona selecciona uno de los rectangulos, el que desee
+    Si la persona seleccionó el rectangulo elegido por la computadora anteriormente se le conceden 10 puntos
+    Si la persona no seleccionó la opción correcta no se le son dados puntos
+    Al finalizar la selección el proceso anterior se repitirá 10 veces, manteniendo el puntaje del anterior
+    Luego de las 10 repeticiones se le es mostrada la sumatoria final de los puntajes a la persona 
+
+    -------------------------------------------------------------------------------------------
+
+    Se divide la pantalla en 4 cuadrantes: 
+    -Se determina el tamaño de la pantalla (ancho y alto)
+    -Se divide tanto el ancho como el largo de la pantalla entre 2, y se le asigna a las variable mitad-ancho y mitad-alto
+    -Se traza una línea vertical desde (mitad-ancho,0), y hasta (mitad-ancho,alto)
+    -Se traza una línea horizontal desde (0,mitad-alto), y hasta (ancho,mitad-alto)
+    -Rellenar con un color al azar determinado anteriormente
+    -Se traza un rectangulo con origen (0,0), de ancho igual a (mitad-ancho), y de alto (mitad-alto) Se le denominará cuadrante "A"
+    -Rellenar con un color al azar determinado anteriormente
+    -Se traza un rectangulo con origen (0,mitad-alto), de ancho igual a (mitad-ancho) y alto (mitad-alto). Se le denominará cuadrante "B"
+    -Rellenar con un color al azar determinado anteriormente
+    -Se traza un rectangulo con origen (mitad-ancho,0), de ancho igual a (mitad-ancho) y alto (mitad-alto). Se le denominará cuadrante "C"
+    -Rellenar con un color al azar determinado anteriormente
+    -Se traza un rectangulo con origen (mitad-ancho,mitad-alto), de ancho igual a (mitad-ancho) y alto (mitad-alto). Se le denominará cuadrante "D"
+
+
+
+
+
