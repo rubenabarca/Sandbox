@@ -18,6 +18,13 @@
             backgroundShade = random(255);
         }
     
+        var R= random (0,255);
+        var G= random (0,255);
+        var B= random (0,255);
+        var WINNER= random (1,5);
+        var MARCADOR=0;
+        var GameNumber=0;
+        var AlreadyPlayed=false;
 
         void draw(){
             background(64);
@@ -26,11 +33,92 @@
             var Ancho=vw;
             var Alto=vh;
 
-            line
+            line (mitadAncho,0,mitadAncho,Alto);
+            line (0,mitadAlto,Ancho,mitadAlto);
+            fill (R,G,B);
+            rect (0,0,mitadAncho,mitadAlto);
+            fill (R-20,G,B-180);
+            rect (0,mitadAlto,mitadAncho,mitadAlto);
+            fill (R-20,G-200,B);
+            rect (mitadAncho,0,mitadAncho,mitadAlto);
+            fill (R,G-200,B-55);
+            rect (mitadAncho,mitadAlto,mitadAncho,mitadAlto);
+            if (mousePressed){
+                if (!AlreadyPlayed){
+                    switch(WINNER){
+                        case 1:
+                            if(isInsideAreaA(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                MARCADOR=MARCADOR+1;
+                            }
+                        break;
+                        case 2:
+                            if(isInsideAreaB(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                MARCADOR=MARCADOR+1;
+                            }
+                        break;
+                        case 3:
+                            if(isInsideAreaC(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                MARCADOR=MARCADOR+1;
+                            }
+                        break;
+                        case 4:
+                            if(isInsideAreaD(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                MARCADOR=MARCADOR+1;
+                            }
+                        break;
+                    
+                    }
+                    console.log("MARCADOR: "+MARCADOR);
+                }
+            } else{
+                if(AlreadyPlayed){
+                    GameNumber=GameNumber+1;
+                    AlreadyPlayed=false;
+                }
+            }
         }
     
        
-    
+        //Si mouseX es menor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante A
+        function isInsideAreaA(ancho,alto,x,y){
+            if(x<ancho && y<alto){
+                return true;
+            } else{
+                return false;
+            }
+
+        }
+
+        //Si mouseX es mayor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante B
+        function isInsideAreaB(ancho,alto,x,y){
+            if(x>ancho && y<alto){
+                return true;
+            } else{
+                return false;
+            }
+
+        }
+
+        //Si mouseX es menor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante C
+        function isInsideAreaC(ancho,alto,x,y){
+            if(x<ancho && y>alto){
+                return true;
+            } else{
+                return false;
+            }
+
+        }
+
+        //Si mouseX es mayor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante D
+        function isInsideAreaD(ancho,alto,x,y){
+            if(x>ancho && y>alto){
+                return true;
+            } else{
+                return false;
+            }
+
+        }
+
      </script>
         <canvas id="sketch"> </canvas>
         

@@ -59,8 +59,22 @@ Loop*10{
     -Se traza un rectangulo con origen (mitad-ancho,0), de ancho igual a (mitad-ancho) y alto (mitad-alto). Se le denominará cuadrante "C"
     -Rellenar con un color al azar determinado anteriormente
     -Se traza un rectangulo con origen (mitad-ancho,mitad-alto), de ancho igual a (mitad-ancho) y alto (mitad-alto). Se le denominará cuadrante "D"
+    -------------------------------------------------------------------------------------------
 
+mousePressed: click= true, no click= false
+mouseX= ubicación horizontal del mouse
+mouseY= ubicación vertical del mouse
+WINNER= cuadrante seleccionado aleatoriamente
 
+Si mousePressed==true : el mouse está clickeando
+Si mouseX es menor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante A
+Si mouseX es mayor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante B
+Si mouseX es menor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante C
+Si mouseX es mayor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante D
 
+Si WINNER==1, se revisa cuadrante A
+Si WINNER==2, se revisa cuadrante B
+Si WINNER==3, se revisa cuadrante C
+Si WINNER==4, se revisa cuadrante D
 
 
