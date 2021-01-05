@@ -21,61 +21,79 @@
         var R= random (0,255);
         var G= random (0,255);
         var B= random (0,255);
-        var WINNER= random (1,5);
+        var WINNER= Math.trunc(random (1,5));
         var MARCADOR=0;
         var GameNumber=0;
         var AlreadyPlayed=false;
+        var GameCompleted=false;
 
         void draw(){
             background(64);
+            if (GameCompleted) return;
             var mitadAncho=vw/2;
             var mitadAlto=vh/2;
             var Ancho=vw;
             var Alto=vh;
-
-            line (mitadAncho,0,mitadAncho,Alto);
-            line (0,mitadAlto,Ancho,mitadAlto);
-            fill (R,G,B);
-            rect (0,0,mitadAncho,mitadAlto);
-            fill (R-20,G,B-180);
-            rect (0,mitadAlto,mitadAncho,mitadAlto);
-            fill (R-20,G-200,B);
-            rect (mitadAncho,0,mitadAncho,mitadAlto);
-            fill (R,G-200,B-55);
-            rect (mitadAncho,mitadAlto,mitadAncho,mitadAlto);
-            if (mousePressed){
-                if (!AlreadyPlayed){
-                    switch(WINNER){
-                        case 1:
-                            if(isInsideAreaA(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                MARCADOR=MARCADOR+1;
-                            }
-                        break;
-                        case 2:
-                            if(isInsideAreaB(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                MARCADOR=MARCADOR+1;
-                            }
-                        break;
-                        case 3:
-                            if(isInsideAreaC(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                MARCADOR=MARCADOR+1;
-                            }
-                        break;
-                        case 4:
-                            if(isInsideAreaD(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                MARCADOR=MARCADOR+1;
-                            }
-                        break;
-                    
+            if (GameNumber>=10){
+                GameCompleted=true;
+                console.log("Su marcador final es:"+MARCADOR);
+            }else{
+                line (mitadAncho,0,mitadAncho,Alto);
+                line (0,mitadAlto,Ancho,mitadAlto);
+                fill (R,G,B);
+                rect (0,0,mitadAncho,mitadAlto);
+                fill (R-20,G,B-180);
+                rect (0,mitadAlto,mitadAncho,mitadAlto);
+                fill (R-20,G-200,B);
+                rect (mitadAncho,0,mitadAncho,mitadAlto);
+                fill (R,G-200,B-55);
+                rect (mitadAncho,mitadAlto,mitadAncho,mitadAlto);
+                if (mousePressed){
+                    if (!AlreadyPlayed){
+                        var WinnerLabel="";
+    
+                        switch(WINNER){
+                            case 1:
+                                if(isInsideAreaA(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                    MARCADOR=MARCADOR+1;
+                                }
+                                WinnerLabel="Cuadrante A";
+                            break;
+                            case 2:
+                                if(isInsideAreaB(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                    MARCADOR=MARCADOR+1;
+                                }
+                                WinnerLabel="Cuadrante B";
+                            break;
+                            case 3:
+                                if(isInsideAreaC(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                    MARCADOR=MARCADOR+1;
+                                }
+                                WinnerLabel="Cuadrante C";
+                            break;
+                            case 4:
+                                if(isInsideAreaD(mitadAncho,mitadAlto,mouseX,mouseY)){
+                                    MARCADOR=MARCADOR+1;
+                                }
+                                WinnerLabel="Cuadrante D";
+                            break;
+                        
+                        }
+                        AlreadyPlayed=true;
+                        console.log("El cuadrante ganador es:"+WinnerLabel);
+                        console.log("MARCADOR: "+MARCADOR);
+                        console.log("NÚMERO DE JUEGO: "+GameNumber);
+                        WINNER= Math.trunc(random (1,5));
                     }
-                    console.log("MARCADOR: "+MARCADOR);
-                }
-            } else{
-                if(AlreadyPlayed){
-                    GameNumber=GameNumber+1;
-                    AlreadyPlayed=false;
+                } else{
+                    if(AlreadyPlayed){
+                        GameNumber=GameNumber+1;
+                        AlreadyPlayed=false;
+                    }
                 }
             }
+
+ 
         }
     
        
