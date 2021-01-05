@@ -39,6 +39,7 @@
                 GameCompleted=true;
                 console.log("Su marcador final es:"+MARCADOR);
             }else{
+                /*
                 line (mitadAncho,0,mitadAncho,Alto);
                 line (0,mitadAlto,Ancho,mitadAlto);
                 fill (R,G,B);
@@ -55,7 +56,20 @@
                 text("Cuadrante B",mitadAncho+20,52);
                 text("Cuadrante C",20,mitadAlto+52);
                 text("Cuadrante D",mitadAncho+20,mitadAlto+52);
+                */
+                var columnCount=10;
+                var rowCount=5;
+                var tileWidth=Math.trunc (Ancho/columnCount)-10;
+                var tileHeight= Math.trunc (Alto/rowCount)-10;
 
+                for (var i=0; i<columnCount; i++){
+                    for (var j=0;j<rowCount; j++){
+                        fill (200,200,200);
+                        rect (i*tileWidth,j*tileHeight,tileWidth,tileHeight); 
+                    }
+
+                } 
+            
                 if (mousePressed){
                     if (!AlreadyPlayed){
                         var WinnerLabel="";
