@@ -14,9 +14,64 @@
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
         const vgafix=loadFont("C:\Windows\Fonts\vgafix.fon");
+        const set1=[];
+        const set2=[];
+        var set3=[];
+        const set4=[];
+        var tiles=[];
         void setup(){
             size(vw, vh);
             backgroundShade = random(255);
+            textFont(vgafix,64);
+            for (var s=0;s<25; s++){
+                set1.push(s);
+                set2.push(s);
+            }
+
+
+            while(set1.length>0){
+                var set1Length=set1.length;
+                var randomIndex=Math.trunc(random(set1Length));
+                set3.push(set1.slice(randomIndex,randomIndex+1)[0]);
+                set1.splice(randomIndex,1);
+            }
+
+            while(set2.length>0){
+                var set2Length=set2.length;
+                var randomIndex=Math.trunc(random(set2Length));
+                set4.push(set2.slice(randomIndex,randomIndex+1)[0]);
+                set2.splice(randomIndex,1);
+            }
+            set3=set3.concat(set4);
+            console.log(set3);
+            var columnCount=10;
+            var rowCount=5;
+            var tileWidth=Math.trunc (vw/columnCount)-10;
+            var tileHeight= Math.trunc (vh/rowCount)-10;
+            
+            var index=0;
+            for (var i=0; i<columnCount; i++){
+                for (var j=0;j<rowCount; j++){
+                    fill (200,200,200);
+                    rect (i*tileWidth,j*tileHeight,tileWidth,tileHeight); 
+                    var tile={
+                        index:index,
+                        tileWidth:tileWidth,
+                        tileHeight:tileHeight,
+                        answer: set3[index],
+                        x:i*tileWidth,
+                        y:j*tileHeight,
+                        x1:i*tileWidth+tileWidth,
+                        y1:j*tileHeight+tileHeight,
+                        selected: false,
+
+                    };
+                    index=index+1;
+                    tiles.push(tile);
+                }
+
+            } 
+            console.log(tiles);
         }
     
         var R= random (0,255);
@@ -27,6 +82,8 @@
         var GameNumber=0;
         var AlreadyPlayed=false;
         var GameCompleted=false;
+
+
 
         void draw(){
             background(64);
@@ -39,38 +96,25 @@
                 GameCompleted=true;
                 console.log("Su marcador final es:"+MARCADOR);
             }else{
-                /*
-                line (mitadAncho,0,mitadAncho,Alto);
-                line (0,mitadAlto,Ancho,mitadAlto);
-                fill (R,G,B);
-                rect (0,0,mitadAncho,mitadAlto);
-                fill (R-20,G,B-180);
-                rect (0,mitadAlto,mitadAncho,mitadAlto);
-                fill (R-20,G-200,B);
-                rect (mitadAncho,0,mitadAncho,mitadAlto);
-                fill (R,G-200,B-55);
-                rect (mitadAncho,mitadAlto,mitadAncho,mitadAlto);
-                textFont(vgafix,32);
-                fill (255,255,255);
-                text("Cuadrante A",20,52);
-                text("Cuadrante B",mitadAncho+20,52);
-                text("Cuadrante C",20,mitadAlto+52);
-                text("Cuadrante D",mitadAncho+20,mitadAlto+52);
-                */
-                var columnCount=10;
-                var rowCount=5;
-                var tileWidth=Math.trunc (Ancho/columnCount)-10;
-                var tileHeight= Math.trunc (Alto/rowCount)-10;
+                
+                for (const i=0; i<tiles.length; i++){
+                    const tile=tiles[i];
+                    fill(200,200,200);
+                    rect (tile.x,tile.y,tile.tileWidth,tile.tileHeight);
+                    if (tile.selected){
+                        fill(0,0,0);
+                        const answer= tile.answer<10 ? "0" +tile.answer : tile.answer;
+                        text(answer,tile.x+10,tile.y+94);
+                    } 
+                }
 
-                for (var i=0; i<columnCount; i++){
-                    for (var j=0;j<rowCount; j++){
-                        fill (200,200,200);
-                        rect (i*tileWidth,j*tileHeight,tileWidth,tileHeight); 
-                    }
-
-                } 
-            
                 if (mousePressed){
+                    for (const i=0; i<tiles.length; i++){
+                        const tile=tiles[i];
+                        if (mouseX>tile.x && mouseX<tile.x1 && mouseY>tile.y && mouseY<tile.y1){
+                           tile.selected=true;
+                        }
+                    }
                     if (!AlreadyPlayed){
                         var WinnerLabel="";
     
