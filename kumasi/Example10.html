@@ -19,6 +19,12 @@
         var set3=[];
         const set4=[];
         var tiles=[];
+        var selectedTiles={
+            first:null,
+            second:null,
+        }
+        var resultTiles=[];
+
         void setup(){
             size(vw, vh);
             backgroundShade = random(255);
@@ -43,7 +49,6 @@
                 set2.splice(randomIndex,1);
             }
             set3=set3.concat(set4);
-            console.log(set3);
             var columnCount=10;
             var rowCount=5;
             var tileWidth=Math.trunc (vw/columnCount)-10;
@@ -71,7 +76,6 @@
                 }
 
             } 
-            console.log(tiles);
         }
     
         var R= random (0,255);
@@ -92,116 +96,81 @@
             var mitadAlto=vh/2;
             var Ancho=vw;
             var Alto=vh;
-            if (GameNumber>=10){
-                GameCompleted=true;
-                console.log("Su marcador final es:"+MARCADOR);
-            }else{
-                
-                for (const i=0; i<tiles.length; i++){
-                    const tile=tiles[i];
-                    fill(200,200,200);
-                    rect (tile.x,tile.y,tile.tileWidth,tile.tileHeight);
-                    if (tile.selected){
-                        fill(0,0,0);
-                        const answer= tile.answer<10 ? "0" +tile.answer : tile.answer;
-                        text(answer,tile.x+10,tile.y+94);
-                    } 
-                }
+            for (const i=0; i<tiles.length; i++){
+                const tile=tiles[i];
+                fill(200,200,200);
+                rect (tile.x,tile.y,tile.tileWidth,tile.tileHeight);
+                if (tile.selected){
+                    fill(0,0,0);
+                    const answer= tile.answer<10 ? "0" +tile.answer : tile.answer;
+                    text(answer,tile.x+10,tile.y+94);
+                } 
+            }
 
-                if (mousePressed){
+            if (mousePressed){ 
+                if(!AlreadyPlayed){
+
+                
+                    AlreadyPlayed=true;
                     for (const i=0; i<tiles.length; i++){
                         const tile=tiles[i];
                         if (mouseX>tile.x && mouseX<tile.x1 && mouseY>tile.y && mouseY<tile.y1){
-                           tile.selected=true;
+                            var tileIndex=resultTiles.indexOf(tile);
+                            if(tileIndex===-1){
+                                console.log(resultTiles);
+                                if (selectedTiles.first===null){
+                                    console.log("first is null");
+                                    selectedTiles.first=tile;
+                                    tile.selected=true;
+                                }else if(selectedTiles.second===null){
+                                    console.log("second is null");
+                                    if(selectedTiles.first!==tile){
+                                        console.log("first is different from tile");
+                                        tile.selected=true;
+                                        selectedTiles.second=tile;
+                                        if(selectedTiles.first.answer===selectedTiles.second.answer){
+                                            resultTiles.push(selectedTiles.first);
+                                            resultTiles.push(selectedTiles.second);
+                                            console.log("resultFound");
+                                            console.log(resultTiles);
+                                        }
+                                    }
+                                }else {
+                                    console.log("Both selected");
+                                    var firstIndex=resultTiles.indexOf(selectedTiles.first);
+                                    if (firstIndex===-1){
+                                        selectedTiles.first.selected=false;
+                                        selectedTiles.first=null;
+                                    }
+                                    var secondIndex=resultTiles.indexOf(selectedTiles.second);
+                                    if (secondIndex===-1){
+                                        selectedTiles.second.selected=false;
+                                        selectedTiles.second=null;
+                                    }
+                                    selectedTiles.first=tile;
+                                    tile.selected=true;
+                                }
+                            }
+
                         }
-                    }
-                    if (!AlreadyPlayed){
-                        var WinnerLabel="";
-    
-                        switch(WINNER){
-                            case 1:
-                                if(isInsideAreaA(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                    MARCADOR=MARCADOR+1;
-                                }
-                                WinnerLabel="Cuadrante A";
-                            break;
-                            case 2:
-                                if(isInsideAreaB(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                    MARCADOR=MARCADOR+1;
-                                }
-                                WinnerLabel="Cuadrante B";
-                            break;
-                            case 3:
-                                if(isInsideAreaC(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                    MARCADOR=MARCADOR+1;
-                                }
-                                WinnerLabel="Cuadrante C";
-                            break;
-                            case 4:
-                                if(isInsideAreaD(mitadAncho,mitadAlto,mouseX,mouseY)){
-                                    MARCADOR=MARCADOR+1;
-                                }
-                                WinnerLabel="Cuadrante D";
-                            break;
                         
-                        }
-                        AlreadyPlayed=true;
-                        console.log("El cuadrante ganador es:"+WinnerLabel);
-                        console.log("MARCADOR: "+MARCADOR);
-                        console.log("NÚMERO DE JUEGO: "+GameNumber);
-                        WINNER= Math.trunc(random (1,5));
                     }
-                } else{
-                    if(AlreadyPlayed){
-                        GameNumber=GameNumber+1;
-                        AlreadyPlayed=false;
-                    }
+                    if(tiles.length===resultTiles.length){
+                        console.log("¡Felicidades! GANASTE");
+                        GameCompleted=true;
+                    } 
+                }
+
+            } else{
+                if(AlreadyPlayed){
+                    AlreadyPlayed=false;
                 }
             }
-
- 
         }
     
        
-        //Si mouseX es menor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante A
-        function isInsideAreaA(ancho,alto,x,y){
-            if(x<ancho && y<alto){
-                return true;
-            } else{
-                return false;
-            }
+      
 
-        }
-
-        //Si mouseX es mayor a mitadAncho y mouseY es menor a mitadAlto la posición del mouse es en el Cuadrante B
-        function isInsideAreaB(ancho,alto,x,y){
-            if(x>ancho && y<alto){
-                return true;
-            } else{
-                return false;
-            }
-
-        }
-
-        //Si mouseX es menor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante C
-        function isInsideAreaC(ancho,alto,x,y){
-            if(x<ancho && y>alto){
-                return true;
-            } else{
-                return false;
-            }
-
-        }
-
-        //Si mouseX es mayor a mitadAncho y mouseY es mayor a mitadAlto la posición del mouse es en el Cuadrante D
-        function isInsideAreaD(ancho,alto,x,y){
-            if(x>ancho && y>alto){
-                return true;
-            } else{
-                return false;
-            }
-
-        }
 
 
 
